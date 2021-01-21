@@ -1,0 +1,149 @@
+/* INÍCIO DO BOTÃO COM NOME OLÁ MUNDO */
+/* .texto{
+  width: 100px;
+  border-radius: 4px;
+  background-color: #00aaff;
+  padding: 3px 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 60px;
+  color: #fff;
+  }
+
+.texto:hover{
+  background-color: #0a91d5;
+}
+
+.texto {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .texto {
+    animation: texto-spin infinite 4s linear;
+  }
+}
+
+@keyframes texto-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+/* FIM DO BOTÃO COM NOME OLÁ MUNDO */
+
+/* INÍCIO DO JOGO DA VELHA */
+:root {
+  --O-color: #2196f3;
+  --X-color: #f44336;
+  --E-color: #555;
+  --verde:  #169e09;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #eee;
+}
+
+.title{
+  text-align: center;
+  font-size: 2.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 110px);
+  gap: .5rem;
+}
+.board.game-over{
+  opacity: 0.8;
+}
+
+.cell{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  border-radius: 5px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00000066;
+
+  cursor: pointer;
+}
+
+.cell:not(.O):not(.X):hover{
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+.cell.O, .cell.X, .game-over .cell{
+  cursor: not-allowed;
+}
+
+.cell.O{
+  background-color: #2196f3;
+}
+
+.cell.X{
+  background-color: #f44336;
+}
+
+.footer{
+  text-align: center;
+}
+
+.footer button{
+  padding: 0.4rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: var(--verde);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.footer button:hover{
+  background-color: #4caf50;
+}
+
+.winner-message{
+  margin: 2rem;
+}
+
+.winner-message span.O{
+  color: var(--O-color);
+  /* color: #2196f3; */
+}
+
+.winner-message span.X{
+  color: var(--X-color);
+  /* color: #f44336; */
+}
+
+.winner-message span.E{
+  color: var(--E-color);
+  /* color: #777; */
+}
+
+/* FIM DO JOGO DA VELHA */
